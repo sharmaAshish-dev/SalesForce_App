@@ -1,0 +1,50 @@
+name: sales_force
+description: A new Flutter project.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.5 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.5
+  google_fonts: ^4.0.3
+  flutter_riverpod: ^2.3.6
+  icons_launcher: ^2.1.0
+  flutter_animate: ^4.2.0
+  connecteo: ^1.1.0
+  avatar_stack: ^1.2.0
+  scroll_snap_effect: ^0.1.0
+  auto_animated_list: ^1.0.4
+  acronym: ^0.5.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+icons_launcher:
+#  image_path: "assets/ic_logo_border.png"
+#  platforms:
+#    android:
+#      enable: true
+#      image_path: "assets/ic_logo_border.png"
+#      # adaptive_background_color: '#ffffff'
+#      adaptive_background_image: "assets/ic_background.png"
+#      adaptive_foreground_image: "assets/ic_foreground.png"
+#      adaptive_round_image: "assets/ic_logo_round.png"
+#      adaptive_monochrome_image: "assets/ic_logo_monochrome.png"
+#    ios:
+#      enable: true
+#      image_path: "assets/ic_logo_rectangle.png"
