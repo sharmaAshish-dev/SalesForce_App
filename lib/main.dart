@@ -1,39 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sales_force/infrastructure/global/providers.dart';
+import 'package:sales_force/theme/theme.dart';
+import 'package:sales_force/theme/theme_provider.dart';
+import 'package:sales_force/values/values.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'infrastructure/global/configs.dart';
+import 'infrastructure/routes/routes.dart';
+
+Future<void> main() async {
+  await initAppConfigs();
+
+  runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends ConsumerStatefulWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  ConsumerState createState() => _MyAppState();
-}
-
-class _MyAppState extends ConsumerState<MyApp> {
-  final counterProvider = StateProvider((ref) => 0);
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch(appVersionProvider);
     return MaterialApp(
-      title: 'Flutter Demo',
-      home: Scaffold(
-        body: Center(
-          // Consumer widget
-          child: Text(
-            '${ref.read(counterProvider)}',
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            // update the provider
-          },
-          child: const Icon(Icons.add),
-        ),
-      ),
+      title: Strings.APP_NAME,
+      theme: Themes.lightTheme,
+      darkTheme: Themes.darkTheme,
+      themeMode: ref.watch(themesProvider),
+      debugShowCheckedModeBanner: false,
+      initialRoute: Routes.splashScreen,
+      onGenerateRoute: RouteConfig.onGenerateRoute,
     );
   }
 }

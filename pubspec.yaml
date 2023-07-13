@@ -23,16 +23,32 @@ dependencies:
   scroll_snap_effect: ^0.1.0
   auto_animated_list: ^1.0.4
   acronym: ^0.5.1
+  shared_preferences: ^2.0.15
+  path_provider: ^2.0.11
+  isar: ^3.1.0
+  isar_flutter_libs: ^3.1.0
+  fluttertoast: ^8.2.2
+  dio: ^4.0.6
+  smooth_page_indicator: ^1.1.0
+  percent_indicator: ^4.2.3
+  package_info_plus: ^4.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+  isar_generator: ^3.1.0
+  build_runner: ^2.3.3
 
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - assets/certificates/
+    - assets/images/
+    - assets/lottie/
 
 icons_launcher:
 #  image_path: "assets/ic_logo_border.png"

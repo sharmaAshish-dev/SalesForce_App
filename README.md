@@ -18,7 +18,7 @@ The Sales Force App is a mobile application developed using Flutter, designed to
     ```
 2. Install the dependencies:
    ```Flutter
-      flutter pub get
+   flutter pub get
    ```
 3. Run the app on an emulator or physical device:
      ```Flutter
