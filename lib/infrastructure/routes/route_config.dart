@@ -6,6 +6,7 @@ class RouteConfig {
     Path(Routes.splashScreen, (context, arguments) => const SplashScreen()),
     Path(Routes.walkthroughScreen, (context, arguments) => const WalkthroughScreen()),
     Path(Routes.loginScreen, (context, arguments) => const LoginScreen()),
+    Path(Routes.mainScreen, (context, arguments) => const MainScreen()),
   ];
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {

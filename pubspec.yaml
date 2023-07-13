@@ -32,6 +32,7 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   percent_indicator: ^4.2.3
   package_info_plus: ^4.0.2
+  floating_frosted_bottom_bar: ^0.0.1
 
 dev_dependencies:
   flutter_test:

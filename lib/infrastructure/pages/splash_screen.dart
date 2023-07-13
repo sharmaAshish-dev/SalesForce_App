@@ -59,7 +59,8 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   }
 
   _initialRoute() {
-    Navigator.of(context).pushReplacementNamed(Routes.walkthroughScreen);
+    // Navigator.of(context).pushReplacementNamed(Routes.walkthroughScreen);
+    Navigator.of(context).pushReplacementNamed(Routes.mainScreen);
     return;
     if (localStorageProvider.isFirstTime) {
       // if (isUserLoggedIn()) {

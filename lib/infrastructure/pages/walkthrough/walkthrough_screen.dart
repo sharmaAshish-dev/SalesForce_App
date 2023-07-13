@@ -35,6 +35,13 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> with SingleTicker
   }
 
   @override
+  void dispose() {
+    _pageController.dispose();
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
@@ -50,17 +57,22 @@ class _WalkthroughScreenState extends State<WalkthroughScreen> with SingleTicker
             child: Row(
               children: [
                 Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      SmoothPageIndicator(
-                        controller: _pageController,
-                        count: screens.length,
-                        effect: ExpandingDotsEffect(activeDotColor: Theme.of(context).primaryColor, dotHeight: Sizes.HEIGHT_10, dotWidth: Sizes.WIDTH_12, expansionFactor: 4),
-                      ),
-                      const SizedBox(height: Sizes.PADDING_10),
-                      Text(Strings.SKIP, style: Theme.of(context).textTheme.titleMedium),
-                    ],
+                  child: GestureDetector(
+                    onTap: () async {
+                      await localStorageProvider.setFirstTime(false).then((_) => Navigator.pushReplacementNamed(context, Routes.loginScreen));
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        SmoothPageIndicator(
+                          controller: _pageController,
+                          count: screens.length,
+                          effect: ExpandingDotsEffect(activeDotColor: Theme.of(context).primaryColor, dotHeight: Sizes.HEIGHT_10, dotWidth: Sizes.WIDTH_12, expansionFactor: 4),
+                        ),
+                        const SizedBox(height: Sizes.PADDING_10),
+                        Text(Strings.SKIP, style: Theme.of(context).textTheme.titleMedium),
+                      ],
+                    ),
                   ),
                 ),
                 CircularPercentIndicator(

@@ -14,6 +14,8 @@ class Strings {
   static const String app_latitude = "";
   static const String app_longitude = "";
 
+  static const String TEST_IMAGE = "https://demo.influxinfotech.net/documents/photos/students/demo_image.jpg";
+
   static const String HOME = "Home";
   static const String NOTIFICATIONS = "Notifications";
   static const String FAVORITES = "Favorites";
@@ -127,4 +129,9 @@ class Strings {
 
   static const String WALKTHROUGH_TITLE_3 = "Close Deals with Confidence";
   static const String WALKTHROUGH_DESC_3 = "Optimize Follow-ups and Close Deals with Confidence, Achieving Successful Sales Outcomes.";
+
+  static const String GOAL = "Goal";
+  static const String TODAY_LEADS = "Today Leads";
+
+  static const String OVERALL_LEADS = "Overall Leads";
 }

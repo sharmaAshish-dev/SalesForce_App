@@ -8,8 +8,6 @@ import '../models/user.dart';
 import '../repository/local_storage_repository.dart';
 
 Future<void> initAppConfigs() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
   Themes.systemOrientation;
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(

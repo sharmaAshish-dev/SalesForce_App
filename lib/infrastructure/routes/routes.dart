@@ -4,6 +4,7 @@ import 'package:flutter/Material.dart';
 import 'package:sales_force/infrastructure/pages/error_screens/page_not_found.dart';
 
 import '../pages/auth/login_screen.dart';
+import '../pages/home/main_screen.dart';
 import '../pages/splash_screen.dart';
 import '../pages/walkthrough/walkthrough_screen.dart';
 
@@ -23,4 +24,5 @@ class Routes {
   static const String splashScreen = '/';
   static const String walkthroughScreen = '/walkthroughScreen';
   static const String loginScreen = '/loginScreen';
+  static const String mainScreen = '/mainScreen';
 }

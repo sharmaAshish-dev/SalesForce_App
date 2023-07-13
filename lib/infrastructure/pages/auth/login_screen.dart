@@ -7,6 +7,7 @@ import 'package:sales_force/infrastructure/global/providers.dart';
 
 import '../../../core/ui/buttons/buttons.dart';
 import '../../../values/values.dart';
+import '../../routes/routes.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -120,15 +121,20 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                 SizedBox(
                                   width: double.infinity,
                                   child: PrimaryButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, Routes.mainScreen);
+                                    },
                                     text: Strings.SIGN_IN,
                                   ),
                                 ),
-                                const SizedBox(height: Sizes.HEIGHT_20),
+                                const SizedBox(height: Sizes.HEIGHT_60),
                                 ref.watch(appVersionProvider).when(data: (data) {
-                                  return Text(
-                                    "${Strings.APP_VERSION} ${data.version}+${data.buildNumber}",
-                                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: black),
+                                  return Align(
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "${Strings.APP_VERSION} ${data.version}",
+                                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: black),
+                                    ),
                                   );
                                 }, loading: () {
                                   return const SizedBox();

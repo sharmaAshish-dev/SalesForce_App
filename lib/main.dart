@@ -9,6 +9,8 @@ import 'infrastructure/global/configs.dart';
 import 'infrastructure/routes/routes.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   await initAppConfigs();
 
   runApp(const ProviderScope(child: MyApp()));
